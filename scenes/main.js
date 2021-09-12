@@ -12,9 +12,9 @@ const map1 = [
   '                                                                  ',
   '                                                                  ',
   '        --                                                        ',
-  '              @                                        --         ',
+  '                                                       --         ',
   '             --          $                                        ',
-  '            --                                     --             ',
+  '            --                               @     --             ',
   '                               x                                  ',
   '----------------    ---------------------------                   ',
 ]
@@ -30,6 +30,23 @@ const LevelCfg = {
 }
 
 addLevel(map1, LevelCfg)
+
+//Soundtrack
+let music = play("Soundtrack1", {
+    volume: 0.8,
+    loop: true,
+    control: true
+});
+
+keyPress('p', () => {
+  if(music.control = true){
+   music.control = false
+   music.pause()}
+  else{
+    music.control = true
+    music.play()
+}
+})
 
 //Score
 const scoreLabel = add([
@@ -64,6 +81,7 @@ keyPress('w', () => {
   if(player.grounded())
   player.jump(JUMP_FORCE)
   player.frame = 2
+  play('jump')
 })
 
 //seting cam
@@ -79,6 +97,7 @@ player.collides('LitSlime', (s) => {
   scoreLabel.value++
   scoreLabel.text = scoreLabel.value
   destroy(s)
+  play('jump')
 })
 
 //enemys

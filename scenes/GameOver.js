@@ -4,3 +4,4 @@ add([
   pos(width()/2, height()/2),
   scale(10)
 ])
+play('GameOver')
