@@ -85,15 +85,15 @@ pos(30,0),
 body()
 ])
 
-keyDown('a' || 'left',  () => {
+keyDown('a',  () => {
   player.move(-MOVE_SPEED,0)
 })
 
-keyDown('d' || 'right', () => {
+keyDown('d', () => {
   player.move(MOVE_SPEED,0)
 })
 
-keyPress('w' || 'up' || 'space', () => {
+keyPress('w', () => {
   if(player.grounded())
   player.jump(JUMP_FORCE)
 })
